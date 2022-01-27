@@ -1,7 +1,8 @@
 from imageai.Detection.Custom import DetectionModelTrainer
 import json
+import sys
 
-f = open('config.json')
+f = open(sys.argv[1])
 
 config = json.load(f)
 
