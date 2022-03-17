@@ -2,7 +2,8 @@ from imageai.Detection.Custom import DetectionModelTrainer
 import json
 import sys
 
-pretrain_model = sys.argv[1]
+pretrain_model = sys.argv[2]
+data_dir = sys.argv[1]
 
 trainer = DetectionModelTrainer()
 trainer.setModelTypeAsYOLOv3()
