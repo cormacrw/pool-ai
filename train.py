@@ -2,13 +2,11 @@ from imageai.Detection.Custom import DetectionModelTrainer
 import json
 import sys
 
-f = open(sys.argv[1])
-
-config = json.load(f)
+pretrain_model = sys.argv[1]
 
 trainer = DetectionModelTrainer()
 trainer.setModelTypeAsYOLOv3()
 trainer.setDataDirectory(data_directory=config['data'])
-trainer.setTrainConfig(object_names_array=["pool ball"], batch_size=4, num_experiments=200, train_from_pretrained_model=config['pretrained_model'])
+trainer.setTrainConfig(object_names_array=["pool ball"], batch_size=4, num_experiments=200, train_from_pretrained_model=pretrain_model)
 
 trainer.trainModel()
